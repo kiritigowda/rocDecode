@@ -73,7 +73,6 @@ access the video decoding features available on your GPU.
 
 >[!NOTE]
 > * All package installs are shown with the `apt` package manager. Use the appropriate package manager for your operating system.
-> * To install rocDecode with minimum requirements, follow the [quick-start](./docs/install/quick-start.rst) instructions
 
 ### Prerequisites setup script
 
