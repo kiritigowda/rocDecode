@@ -32,10 +32,10 @@ else()
   set(ROCM_PATH /opt/rocm CACHE PATH "Default ROCm installation path")
 endif()
 
+# Set AMD Clang as default compiler
 if (NOT DEFINED CMAKE_CXX_COMPILER)
   set(CMAKE_CXX_COMPILER ${ROCM_PATH}/bin/amdclang++)
 endif()
-
 
 # NOTE: Match version with api/rocdecode_version.h
 set(VERSION "0.8.0")
@@ -43,11 +43,6 @@ set(CMAKE_CXX_STANDARD 17)
 
 # Set Project Version and Language
 project(rocdecode VERSION ${VERSION} LANGUAGES CXX)
-
-# avoid setting the default installation path to /usr/local
-if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
-  set(CMAKE_INSTALL_PREFIX ${ROCM_PATH} CACHE PATH "rocDecode default installation path" FORCE)
-endif(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
 
 set(CMAKE_INSTALL_LIBDIR "lib" CACHE STRING "Library install directory")
 set(CMAKE_INSTALL_INCLUDEDIR "include" CACHE STRING "Include install directory")
@@ -60,6 +55,11 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_BINDIR})
 find_program(MAKE_NSIS_EXE makensis)
 find_program(RPMBUILD_EXE rpmbuild)
 find_program(DPKG_EXE dpkg)
+
+# avoid setting the default installation path to /usr/local
+if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+  set(CMAKE_INSTALL_PREFIX ${ROCM_PATH} CACHE PATH "rocDecode default installation path" FORCE)
+endif(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
 
 set(DEFAULT_BUILD_TYPE "Release")
 set(ENHANCED_MESSAGE ON)
