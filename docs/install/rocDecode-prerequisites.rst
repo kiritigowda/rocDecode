@@ -28,9 +28,9 @@ The following prerequisites are installed by the package installer. If you are b
   
   If you're installing using the rocDecode source code, the ``rocDecode-setup.py`` script must be run with ``--developer`` set to ``ON``.
 
-* Libva, an implementation for Video Acceleration API (VA-API)
+* Libva-amdgpu-dev, an AMD implementation for Video Acceleration API (VA-API)
 * AMD VA Drivers
-* CMake version 3.5 or later
+* CMake version 3.10 or later
 * AMD Clang++ Version 18.0.0 or later
 * pkg-config
 * FFmpeg runtime and headers

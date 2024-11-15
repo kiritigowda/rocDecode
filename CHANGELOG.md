@@ -7,7 +7,7 @@ Full documentation for rocDecode is available at [https://rocm.docs.amd.com/proj
 ### Changed
 
 * AMD Clang++ is now the default CXX compiler.
-* `rocDecode-setup.py` setup script updates to common package install
+* `rocDecode-setup.py` setup script updates to common package install: Setup no longer installs public clang package.
 
 ### Removed
 
@@ -23,12 +23,10 @@ Full documentation for rocDecode is available at [https://rocm.docs.amd.com/proj
   * Ubuntu - `22.04` / `24.04`
   * RHEL - `8` / `9`
   * SLES - `15 SP5`
-* ROCm:
-  * rocm-core - `6.2.0.60200-66`
-  * amdgpu-core - `1:6.2.60200-2009582`
-* libva-andgpu-dev - `2.16.0`
-* mesa-amdgpu-va-drivers - `1:24.2.0.60200-2009582`
-* FFmpeg - `4.2.7` / `4.4.2-0`
+* ROCm: `6.3.0`
+* libva-amdgpu-dev - `2.16.0`
+* mesa-amdgpu-va-drivers - `1:24.3.0`
+* FFmpeg - `4.4.2` / `6.1.1`
 * rocDecode Setup Script - `V2.4.0`
 
 ## rocDecode 0.8.0 for ROCm 6.3
