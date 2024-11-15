@@ -92,7 +92,8 @@ The installation process uses the following steps:
 
 * Install ROCm `6.3.0` or later with [amdgpu-install](https://rocm.docs.amd.com/projects/install-on-linux/en/latest/how-to/amdgpu-install.html) with `--usecase=rocm`
 
-* Use **either** [package install](#package-install) **or** [source install](#source-install) as described below.
+>[!IMPORTANT]
+> Use **either** [package install](#package-install) **or** [source install](#source-install) as described below.
 
 ### Package install
 
