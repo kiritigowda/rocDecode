@@ -17,7 +17,7 @@ access the video decoding features available on your GPU.
 ## Prerequisites
 
 * Linux distribution
-  * Ubuntu - `20.04` / `22.04`
+  * Ubuntu - `22.04` / `24.04`
   * RHEL - `8` / `9`
   * SLES - `15 SP5`
 
@@ -29,7 +29,7 @@ access the video decoding features available on your GPU.
 > [!IMPORTANT]
 > `sudo amdgpu-install --usecase=rocm`
 
-* [Video Acceleration API](https://en.wikipedia.org/wiki/Video_Acceleration_API) - `Libva` is an implementation for VA-API
+* [Video Acceleration API](https://en.wikipedia.org/wiki/Video_Acceleration_API) - `libva-amdgpu-dev` is an AMD implementation for VA-API
   ```shell
   sudo apt install libva-amdgpu-dev
   ```
@@ -50,10 +50,7 @@ access the video decoding features available on your GPU.
   sudo apt install cmake
   ```
 
-* Clang Version `5.0.1` or later
-  ```shell
-  sudo apt install clang
-  ```
+* AMD Clang++ Version `18.0.0` or later - installed with ROCm
 
 * [pkg-config](https://en.wikipedia.org/wiki/Pkg-config)
 
@@ -228,4 +225,4 @@ You can find rocDecode Docker containers in our
 * libva-dev - `2.7.0-2` / `2.14.0-1`
 * mesa-amdgpu-va-drivers - `1:24.2.0.60200-2009582`
 * FFmpeg - `4.2.7` / `4.4.2-0`
-* rocDecode Setup Script - `V2.2.0`
+* rocDecode Setup Script - `V2.3.0`

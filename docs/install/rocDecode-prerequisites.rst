@@ -16,7 +16,7 @@ ROCm must be installed using the [AMDGPU installer](https://rocm.docs.amd.com/pr
 
 rocDecode can be installed on the following Linux environments:
   
-* Ubuntu 20.04, 22.04
+* Ubuntu 22.04, 24.04
 * RHEL 8 or 9
 * SLES: 15-SP5
 
@@ -31,7 +31,7 @@ The following prerequisites are installed by the package installer. If you are b
 * Libva, an implementation for Video Acceleration API (VA-API)
 * AMD VA Drivers
 * CMake version 3.5 or later
-* Clang Version 5.0.1 or later
+* AMD Clang++ Version 18.0.0 or later
 * pkg-config
 * FFmpeg runtime and headers
 * libstdc++-12-dev for installations on Ubuntu 22.04 

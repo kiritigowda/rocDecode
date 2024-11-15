@@ -6,7 +6,7 @@ Full documentation for rocDecode is available at [https://rocm.docs.amd.com/proj
 
 ### Changed
 
-* Clang is now the default CXX compiler.
+* AMD Clang++ is now the default CXX compiler.
 * The new minimum supported version of va-api is 1.16.
 * New build and runtime options have been added to the `rocDecode-setup.py` setup script.
 
@@ -18,6 +18,20 @@ Full documentation for rocDecode is available at [https://rocm.docs.amd.com/proj
 ### Resolved issues
 
 * Fixed a bug in the size of output streams in the `videoDecodeBatch` sample.
+
+### Tested configurations
+
+* Linux
+  * Ubuntu - `22.04` / `24.04`
+  * RHEL - `8` / `9`
+  * SLES - `15 SP5`
+* ROCm:
+  * rocm-core - `6.2.0.60200-66`
+  * amdgpu-core - `1:6.2.60200-2009582`
+* libva-andgpu-dev - `2.16.0`
+* mesa-amdgpu-va-drivers - `1:24.2.0.60200-2009582`
+* FFmpeg - `4.2.7` / `4.4.2-0`
+* rocDecode Setup Script - `V2.3.0`
 
 ## rocDecode 0.7.0
 
