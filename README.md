@@ -44,7 +44,7 @@ access the video decoding features available on your GPU.
 > [!NOTE]
 > RPM Packages for `RHEL`/`SLES` - `libva-amdgpu mesa-amdgpu-va-drivers`
 
-* CMake Version `3.5` or later
+* CMake Version `3.10` or later
 
   ```shell
   sudo apt install cmake
@@ -225,4 +225,4 @@ You can find rocDecode Docker containers in our
 * libva-dev - `2.7.0-2` / `2.14.0-1`
 * mesa-amdgpu-va-drivers - `1:24.2.0.60200-2009582`
 * FFmpeg - `4.2.7` / `4.4.2-0`
-* rocDecode Setup Script - `V2.3.0`
+* rocDecode Setup Script - `V2.4.0`
