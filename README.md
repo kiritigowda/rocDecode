@@ -34,8 +34,8 @@ access the video decoding features available on your GPU.
   sudo apt install libva-amdgpu-dev
   ```
 > [!NOTE]
-> RPM Packages for `RHEL`/`SLES` - `libva-amdgpu-devel`
-> libva-amdgpu is strongly recommended over system libva as it is used for building mesa-amdgpu-va-driver
+> * RPM Packages for `RHEL`/`SLES` - `libva-amdgpu-devel`
+> * `libva-amdgpu` is strongly recommended over system `libva` as it is used for building mesa-amdgpu-va-driver
 
 * AMD VA Drivers
   ```shell
