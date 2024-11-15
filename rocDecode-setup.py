@@ -161,7 +161,6 @@ if userName == 'root':
 # source install - common package dependencies
 commonPackages = [
     'cmake',
-    'unzip',
     'pkg-config',
     'rocm-hip-runtime'
 ]
