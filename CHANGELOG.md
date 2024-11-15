@@ -2,7 +2,7 @@
 
 Full documentation for rocDecode is available at [https://rocm.docs.amd.com/projects/rocDecode/en/latest/](https://rocm.docs.amd.com/projects/rocDecode/en/latest/)
 
-## rocDecode 0.9.0 (unreleased)
+## (Unreleased) rocDecode 0.9.0
 
 ### Changed
 
