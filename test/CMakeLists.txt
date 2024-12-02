@@ -22,6 +22,19 @@
 # ##############################################################################
 cmake_minimum_required(VERSION 3.10)
 
+# ROCM Path
+if(DEFINED ENV{ROCM_PATH})
+  set(ROCM_PATH $ENV{ROCM_PATH} CACHE PATH "${White}${PROJECT_NAME}: Default ROCm installation path${ColourReset}")
+elseif(ROCM_PATH)
+  message("-- ${White}${PROJECT_NAME} :ROCM_PATH Set -- ${ROCM_PATH}${ColourReset}")
+else()
+  set(ROCM_PATH /opt/rocm CACHE PATH "${White}${PROJECT_NAME}: Default ROCm installation path${ColourReset}")
+endif()
+# Set AMD Clang as default compiler
+if (NOT DEFINED CMAKE_CXX_COMPILER)
+  set(CMAKE_CXX_COMPILER ${ROCM_PATH}/bin/amdclang++)
+endif()
+
 project(rocdecode-test)
 
 # make test with CTest
@@ -35,15 +48,6 @@ if(NOT DEFINED ENHANCED_MESSAGE)
   set(Green       "${Esc}[32m")
   set(Yellow      "${Esc}[33m")
   set(White       "${Esc}[37m")
-endif()
-
-# ROCM Path
-if(DEFINED ENV{ROCM_PATH})
-  set(ROCM_PATH $ENV{ROCM_PATH} CACHE PATH "${White}${PROJECT_NAME}: Default ROCm installation path${ColourReset}")
-elseif(ROCM_PATH)
-  message("-- ${White}${PROJECT_NAME} :ROCM_PATH Set -- ${ROCM_PATH}${ColourReset}")
-else()
-  set(ROCM_PATH /opt/rocm CACHE PATH "${White}${PROJECT_NAME}: Default ROCm installation path${ColourReset}")
 endif()
 
 # add find modules
