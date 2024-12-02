@@ -39,10 +39,6 @@ elseif(ROCM_PATH)
 else()
   set(ROCM_PATH /opt/rocm CACHE PATH "${White}${PROJECT_NAME}: Default ROCm installation path${ColourReset}")
 endif()
-# Set AMD Clang as default compiler
-if (NOT DEFINED CMAKE_CXX_COMPILER)
-  set(CMAKE_CXX_COMPILER ${ROCM_PATH}/bin/amdclang++)
-endif()
 
 project(rocdecode-test)
 
