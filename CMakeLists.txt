@@ -22,7 +22,6 @@
 # ##############################################################################
 
 cmake_minimum_required(VERSION 3.10)
-
 # ROCM Path
 if(DEFINED ENV{ROCM_PATH})
   set(ROCM_PATH $ENV{ROCM_PATH} CACHE PATH "Default ROCm installation path")
@@ -31,15 +30,16 @@ elseif(ROCM_PATH)
 else()
   set(ROCM_PATH /opt/rocm CACHE PATH "Default ROCm installation path")
 endif()
-
 # Set AMD Clang as default compiler
 if (NOT DEFINED CMAKE_CXX_COMPILER)
+  set(CMAKE_C_COMPILER ${ROCM_PATH}/bin/amdclang)
   set(CMAKE_CXX_COMPILER ${ROCM_PATH}/bin/amdclang++)
 endif()
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED On)
 
 # NOTE: Match version with api/rocdecode_version.h
 set(VERSION "0.10.0")
-set(CMAKE_CXX_STANDARD 17)
 
 # Set Project Version and Language
 project(rocdecode VERSION ${VERSION} LANGUAGES CXX)
@@ -90,8 +90,7 @@ endif()
 if(CMAKE_BUILD_TYPE MATCHES Debug)
   # -O0 -- Don't Optimize output file 
   # -g  -- generate debugging information, generate debugging information, dwarf-4 for making valgrind work
-  # -Og -- Optimize for debugging experience rather than speed or size
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0 -gdwarf-4 -Og")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0 -gdwarf-4")
 else()
   # -O3       -- Optimize output file 
   # -DNDEBUG  -- turn off asserts 
@@ -120,11 +119,8 @@ if(HIP_FOUND AND Libva_FOUND)
   include_directories(${LIBVA_INCLUDE_DIR})
   set(LINK_LIBRARY_LIST ${LINK_LIBRARY_LIST} ${LIBVA_LIBRARY})
   set(LINK_LIBRARY_LIST ${LINK_LIBRARY_LIST} ${LIBVA_DRM_LIBRARY})
-
-  #filesystem: c++ compilers less than equal to 8.5 need explicit link with stdc++fs
-  if (CMAKE_CXX_COMPILER_VERSION VERSION_LESS_EQUAL "8.5")
-    set(LINK_LIBRARY_LIST ${LINK_LIBRARY_LIST} stdc++fs)
-  endif()
+  # STD Filesystem
+  set(LINK_LIBRARY_LIST ${LINK_LIBRARY_LIST} stdc++fs)
 
   # rocprofiler
   if (rocprofiler-register_FOUND)
