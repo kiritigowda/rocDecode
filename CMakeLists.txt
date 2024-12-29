@@ -245,7 +245,7 @@ if(HIP_FOUND AND Libva_FOUND)
   if(UBUNTU_22_FOUND)
     set(ROCDECODE_DEBIAN_DEV_PACKAGE_LIST "${ROCDECODE_DEBIAN_DEV_PACKAGE_LIST}, libstdc++-12-dev")
   endif()
-  # TBD - RPM packages need Fusion Packages - "ffmpeg, libavcodec-devel, libavformat-devel, libavutil-devel"
+  # TBD - RPM packages need Fusion Packages - "libavcodec-devel, libavformat-devel, libavutil-devel"
   set(ROCDECODE_RPM_DEV_PACKAGE_LIST  "rocm-hip-runtime-devel, libva-amdgpu-devel, pkg-config")
   
   # '%{?dist}' breaks manual builds on debian systems due to empty Provides
